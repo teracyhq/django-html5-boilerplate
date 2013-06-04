@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="{{ page.lang|default:'en' }}" dir="{{ page.dir|default:'ltr' }}"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="{{ page.lang|default:'en' }}" dir="{{ page.dir|default:'ltr' }}"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="{{ page.lang|default:'en' }}" dir="{{ page.dir|default:'ltr' }}"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="{{ page.lang|default:'en' }}" dir="{{ page.dir|default:'ltr' }}"> <!--<![endif]-->
+<head>
+{% block meta %}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="{{ page.description }}" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="keywords" content="{{ page.keywords }}" />
+    <meta name="author" content="{{ page.author }}" />
+    <meta name="copyright" content="{{ page.copyright }}" />
+{% endblock %}
+
+{% block meta_extra %}{% endblock %}
+
+{% block title %}
+    <title>{{ page.title }}</title>
+{% endblock %}
+
+{% comment %}
+    Place favicon.ico and apple-touch-icon.png in the root directory
+    Or explicit set these on apple_touch_icon and favicon blocks.
+{% endcomment %}
+{% block apple_touch_icon %}{% endblock %}
+
+{% block favicon %}{% endblock %}
+
+{% load staticfiles %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'html5boilerplate/css/normalize.css' %}" />
+    <link rel="stylesheet" href="{% static 'html5boilerplate/css/main.css' %}" />
+{% endblock %}
+
+{% block javascript %}
+    <script src="{% static 'html5boilerplate/js/vendor/modernizr-2.6.2.min.js' %}"></script>
+{% endblock %}
+
+</head>
+<body class="{% block body_class %}{% endblock %}">
+{% block browser_outdated %}
+    {% comment %} TODO translate the text below {% endcomment %}
+    <!--[if lt IE 7]>
+    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+{% endblock %}
+
+{% block body_content %}
+    <!-- Add your site or application content here -->
+{% endblock %}
+
+{% block body_extra %}
+    {% block jquery_loader %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{% static 'html5boilerplate/js/vendor/jquery-1.9.1.min.js' %}"><\/script>')</script>
+    <script src="{% static 'html5boilerplate/js/plugins.js' %}"></script>
+    {% endblock %}
+
+    {% block google_analytics %}
+    {% comment %}Google Analytics: change UA-XXXXX-X to be your site's ID with page.ga_id{% endcomment %}
+    {% if page.ga_id %}
+    <script>
+        var _gaq=[['_setAccount','{{ page.ga_id }}'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+    {% endif %}
+
+    {% endblock %}
+{% endblock %}
+</body>
+</html>

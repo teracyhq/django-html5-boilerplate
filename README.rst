@@ -1,5 +1,5 @@
 =====
-html5boilerplate Django wrapper application
+html5-boilerplate Django wrapper application
 =====
 
 vendor.html5boilerplate is a Django wrapper application that includes html5boilerplate assets
