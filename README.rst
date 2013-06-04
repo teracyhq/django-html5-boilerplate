@@ -15,7 +15,7 @@ Quick start
 ::
     No dependency.
 
-2. Add "vender.html5boilerplate" to your INSTALLED_APPS setting like this:
+2. Add "vendor.html5boilerplate" to your INSTALLED_APPS setting like this:
 ::
 
     INSTALLED_APPS += (
