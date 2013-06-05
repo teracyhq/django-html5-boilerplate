@@ -1,5 +1,20 @@
 import os
+import re
 from setuptools import setup, find_packages
+
+
+def get_file(*parts):
+    filename = os.path.join(os.path.dirname(__file__), *parts)
+    return open(filename)
+
+
+def find_version(*file_paths):
+    f = get_file(*file_paths)
+    for line in f:
+        if re.match('__version__ = .+', line):
+            return re.search('\d.+\d', line).group(0)
+    raise RuntimeError('Unable to find string version')
+
 
 README = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 
@@ -8,7 +23,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='vendor-html5boilerplate',
-    version='0.1.0.dev0',
+    version=find_version('vendor', 'html5boilerplate', '__init__.py'),
     packages=find_packages(),
     namespace_packages=['vendor'],
     include_package_data=True,
