@@ -2,7 +2,7 @@
 html5-boilerplate Django wrapper application
 ============================================
 
-vendor.html5boilerplate is a Django wrapper application that includes html5-boilerplate assets
+teracy.html5boilerplate is a Django wrapper application that includes html5-boilerplate assets
 and provides base.html for starting any web application with html5-boilerplate.
 This base.html is flexible enough that you could override almost any block within it.
 
@@ -15,11 +15,11 @@ Quick start
 ::
     No dependency.
 
-2. Add "vendor.html5boilerplate" to your INSTALLED_APPS setting like this:
+2. Add "teracy.html5boilerplate" to your INSTALLED_APPS setting like this:
 ::
 
     INSTALLED_APPS += (
-        'vendor.html5boilerplate',
+        'teracy.html5boilerplate',
     )
 
 3. Extend the base.html like this:
