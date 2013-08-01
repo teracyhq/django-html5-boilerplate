@@ -103,26 +103,18 @@ twitter cards, apple app id, etc.).
 How to develop and contribute
 -----------------------------
 
-#. Make sure to install the test dependency:
+1. Make sure to resolve the dependency requirements:
 ::
-    $ pip install -r requirements/test.txt
+    $ make resolve
 
-#. Make sure to install this project as development mode:
+2. Make sure to check the coding style:
 ::
-    $ pip install -e .
+    $ make check-style
 
-#. Make sure to use ``flake8`` to check the coding style:
+3. Make sure to run tests:
 ::
-    $ flake8 .
+    $ make test
 
-#. Make sure to run tests:
+4. Make sure to check the coverage report:
 ::
-    $ django-admin.py test --settings=teracy.html5boilerplate.test_settings teracy.html5boilerplate
-
-#. Make sure to run tests with ``coverage``:
-::
-    $ coverage run --branch --source=teracy `which django-admin.py` test --settings=teracy.html5boilerplate.test_settings teracy.html5boilerplate
-
-#. And check the coverage report:
-::
-    $ coverage report --omit=teracy/html5boilerplate/test*
+    $ make coverage-report

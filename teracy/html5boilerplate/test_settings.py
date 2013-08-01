@@ -9,12 +9,6 @@ DATABASES = {
     }
 }
 
-# INSTALLED_APPS = [
-#     'django.contrib.contenttypes',
-#     'django.contrib.sites',
-#     'django.contrib.auth',
-#     'django.contrib.admin',
-# ]
 
 if django.VERSION[:2] < (1, 6):
     TEST_RUNNER = 'discover_runner.DiscoverRunner'
