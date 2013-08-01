@@ -1,4 +1,3 @@
-============================================
 html5-boilerplate Django wrapper application
 ============================================
 
@@ -75,7 +74,8 @@ By default:
 
 * [meta]: includes basic meta data of a page.
 
-* [meta_extra]: should be used to provide more meta data for the page (for example: open graph, twitter cards, apple app id, etc.,).
+* [meta_extra]: should be used to provide more meta data for the page (for example: open graph,
+twitter cards, apple app id, etc.).
 
 * [title]: should provide page.title context to set the page's title.
 
@@ -98,3 +98,23 @@ By default:
 * [jquery_loader]: Load jquery.
 
 * [google_analytics]: Setup google analytics code if "page.ga_id" context is provided.
+
+
+How to develop and contribute
+-----------------------------
+
+1. Make sure to resolve the dependency requirements:
+::
+    $ make resolve
+
+2. Make sure to check the coding style:
+::
+    $ make check-style
+
+3. Make sure to run tests:
+::
+    $ make test
+
+4. Make sure to check the coverage report:
+::
+    $ make coverage-report
