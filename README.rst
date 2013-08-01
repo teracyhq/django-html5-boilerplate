@@ -1,4 +1,3 @@
-============================================
 html5-boilerplate Django wrapper application
 ============================================
 
@@ -75,7 +74,8 @@ By default:
 
 * [meta]: includes basic meta data of a page.
 
-* [meta_extra]: should be used to provide more meta data for the page (for example: open graph, twitter cards, apple app id, etc.,).
+* [meta_extra]: should be used to provide more meta data for the page (for example: open graph,
+twitter cards, apple app id, etc.).
 
 * [title]: should provide page.title context to set the page's title.
 
@@ -98,3 +98,31 @@ By default:
 * [jquery_loader]: Load jquery.
 
 * [google_analytics]: Setup google analytics code if "page.ga_id" context is provided.
+
+
+How to develop and contribute
+-----------------------------
+
+#. Make sure to install the test dependency:
+::
+    $ pip install -r requirements/test.txt
+
+#. Make sure to install this project as development mode:
+::
+    $ pip install -e .
+
+#. Make sure to use ``flake8`` to check the coding style:
+::
+    $ flake8 .
+
+#. Make sure to run tests:
+::
+    $ django-admin.py test --settings=teracy.html5boilerplate.test_settings teracy.html5boilerplate
+
+#. Make sure to run tests with ``coverage``:
+::
+    $ coverage run --branch --source=teracy `which django-admin.py` test --settings=teracy.html5boilerplate.test_settings teracy.html5boilerplate
+
+#. And check the coverage report:
+::
+    $ coverage report --omit=teracy/html5boilerplate/test*
