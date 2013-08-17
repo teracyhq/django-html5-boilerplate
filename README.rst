@@ -1,7 +1,7 @@
-teracy-html5boilerplate |build status|_
-=======================================
+django-html5-boilerplate |build status|_
+========================================
 
-teracy.html5boilerplate is a Django wrapper application that includes html5-boilerplate assets
+django-html5-boilerplate is a Django wrapper application that includes html5-boilerplate assets
 and provides base.html for starting any web application with html5-boilerplate.
 This base.html is flexible enough that you could override almost any block within it.
 
@@ -119,5 +119,5 @@ How to develop and contribute
 ::
     $ make coverage-report
 
-.. |build status| image:: https://travis-ci.org/teracy-official/teracy-html5boilerplate.png?branch=develop
-.. _build status: https://travis-ci.org/teracy-official/teracy-html5boilerplate
+.. |build status| image:: https://travis-ci.org/teracy-official/django-html5-boilerplate.png?branch=develop
+.. _build status: https://travis-ci.org/teracy-official/django-html5-boilerplate

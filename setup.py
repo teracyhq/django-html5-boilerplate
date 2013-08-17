@@ -22,7 +22,7 @@ README = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
-    name='teracy-html5boilerplate',
+    name='django-html5boilerplate',
     version=find_version('teracy', 'html5boilerplate', '__init__.py'),
     packages=find_packages(),
     namespace_packages=['teracy'],
@@ -30,7 +30,7 @@ setup(
     license='BSD License',
     description='html5-boilerplate Django wrapper application',
     long_description=README,
-    url='http://www.teracy.org/projects/teracy-html5boilerplate',
+    url='http://djhbp.teracy.org',
     author='hoatle',
     author_email='hoatlevan@gmail.com',
     classifiers=[
