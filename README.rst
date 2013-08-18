@@ -117,7 +117,7 @@ How to develop and contribute
 
 4. Make sure to check the coverage report:
 ::
-    $ make coverage-report
+    $ make report-coverage
 
 .. |build status| image:: https://travis-ci.org/teracy-official/django-html5-boilerplate.png?branch=develop
 .. _build status: https://travis-ci.org/teracy-official/django-html5-boilerplate
