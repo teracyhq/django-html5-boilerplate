@@ -63,7 +63,7 @@ class ContextProcessorsTest(SimpleTestCase):
         self.assertEqual(page_context, expected_page_context,
                          '%s must be %s' % (page_context, expected_page_context))
 
-    def test_ga_id(self):
+    def test_site_ga_id(self):
         """
         Tests that only SITE_GA_ID is defined
         """
@@ -88,12 +88,12 @@ class ContextProcessorsTest(SimpleTestCase):
         request = self.factory.get('/')
         context_extras = page(request)
         page_context = context_extras['page']
-        self.assertEqual(page_context.author, settings.SITE_AUTHOR,
-                         '%s must be %s' % (page_context.author, settings.SITE_AUTHOR))
-        self.assertEqual(page_context.copyright, settings.SITE_COPYRIGHT,
-                         '%s must be %s' % (page_context.copyright, settings.SITE_COPYRIGHT))
-        self.assertEqual(page_context.ga_id, settings.SITE_GA_ID,
-                         '%s must be %s' % (page_context.ga_id, settings.SITE_GA_ID))
+        self.assertEqual(page_context['author'], settings.SITE_AUTHOR,
+                         '%s must be %s' % (page_context['author'], settings.SITE_AUTHOR))
+        self.assertEqual(page_context.get('copyright'), settings.SITE_COPYRIGHT,
+                         '%s must be %s' % (page_context['copyright'], settings.SITE_COPYRIGHT))
+        self.assertEqual(page_context['ga_id'], settings.SITE_GA_ID,
+                         '%s must be %s' % (page_context['ga_id'], settings.SITE_GA_ID))
 
     def test_complex(self):
         """
@@ -103,9 +103,9 @@ class ContextProcessorsTest(SimpleTestCase):
         settings.SITE_COPYRIGHT = 'Teracy, Inc'
         request = self.factory.get('/')
         context_extras = page(request)
-        page_context = context_extras.page
+        page_context = context_extras['page']
 
-        self.assertEqual(page_context.author, settings.SITE_AUTHOR,
-                         '%s must be %s' % (page_context.author, settings.SITE_AUTHOR))
-        self.assertEqual(page_context.copyright, settings.SITE_COPYRIGHT,
-                         '%s must be %s' % (page_context.copyright, settings.SITE_COPYRIGHT))
+        self.assertEqual(page_context['author'], settings.SITE_AUTHOR,
+                         '%s must be %s' % (page_context['author'], settings.SITE_AUTHOR))
+        self.assertEqual(page_context['copyright'], settings.SITE_COPYRIGHT,
+                         '%s must be %s' % (page_context['copyright'], settings.SITE_COPYRIGHT))
