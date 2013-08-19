@@ -1,31 +1,39 @@
-django-html5-boilerplate |build status|_
-========================================
+django-html5-boilerplate
+========================
 
-django-html5-boilerplate is a Django wrapper application that includes html5-boilerplate assets
-and provides base.html for starting any web application with html5-boilerplate.
-This base.html is flexible enough that you could override almost any block within it.
+``django-html5-boilerplate`` is a Django wrapper application that includes `html5-boilerplate`_
+assets and provides ``base.html`` for starting any web application with ``html5-boilerplate``.
+This ``base.html`` is flexible enough that you could override almost any block within it.
 
-Detailed documentation is in the "docs" directory.
+Continuous Integration
+----------------------
 
-Quick start
------------
+|travis build status|_
 
-1. Add dependency
+|jenkins build status|_
+
+
+Installation
+------------
+
+1. Add ``django-html5-boilerplate`` application into your requirements file:
 ::
-    No dependency.
+    git+git://github.com/teracy-official/django-html5-boilerplate.git@develop#egg=django-html5-boilerplate
 
-2. Add "teracy.html5boilerplate" to your INSTALLED_APPS setting like this:
+
+1. Add "teracy.html5boilerplate" to your ``INSTALLED_APPS`` setting like this:
 ::
 
     INSTALLED_APPS += (
         'teracy.html5boilerplate',
     )
 
-3. Extend the base.html like this:
+2. Extend the ``base.html`` like this:
 ::
     {% extends 'html5boilerplate/base.html' %}
 
-Context variables
+
+Context Variables
 -----------------
 
 Context variables are expected to be included in a dictionary variable named: "page".
@@ -41,10 +49,22 @@ Context variables are expected to be included in a dictionary variable named: "p
     page.title           - value for <title> tag. Default: None.
     page.ga_id           - id for google analytics. Default: None.
 
+Context Processors
+------------------
+
+``teracy.html5boilerplate.context_processors.page`` context processor is provided to process
+``page.author``, ``page.copyright`` and ``page.ga_id`` from django settings file like the
+configuration below:
+::
+    SITE_AUTHOR = 'Teracy'
+    SITE_COPYRIGHT = 'Teracy, Inc'
+    SITE_GA_ID = 'UA-42868657-2'
+
+
 Blocks
 ------
 
-Convention notice:
+Conventions:
 ::
     [block_name]
         [child_block_name]
@@ -100,8 +120,8 @@ twitter cards, apple app id, etc.).
 * [google_analytics]: Setup google analytics code if "page.ga_id" context is provided.
 
 
-How to develop and contribute
------------------------------
+Contributing
+------------
 
 1. Make sure to resolve the dependency requirements:
 ::
@@ -119,5 +139,52 @@ How to develop and contribute
 ::
     $ make report-coverage
 
-.. |build status| image:: https://travis-ci.org/teracy-official/django-html5-boilerplate.png?branch=develop
-.. _build status: https://travis-ci.org/teracy-official/django-html5-boilerplate
+5. File issues at https://issues.teracy.org/browse/DJHBP
+
+
+Authors and contributors
+------------------------
+
+- Hoat Le: http://github.com/hoatle
+
+
+License
+-------
+
+BSD License
+::
+    Copyright (c) Teracy, Inc and individual contributors.
+    All rights reserved.
+
+    Redistribution and use in source and binary forms, with or without modification,
+    are permitted provided that the following conditions are met:
+
+        1. Redistributions of source code must retain the above copyright notice,
+           this list of conditions and the following disclaimer.
+
+        2. Redistributions in binary form must reproduce the above copyright
+           notice, this list of conditions and the following disclaimer in the
+           documentation and/or other materials provided with the distribution.
+
+        3. Neither the name of Teracy nor the names of its contributors may be used
+           to endorse or promote products derived from this software without
+           specific prior written permission.
+
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+    ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+    WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+    DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+    ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+    (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+    LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+    ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+    (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+.. |travis build status| image:: https://travis-ci.org/teracy-official/django-html5-boilerplate.png?branch=develop
+.. _travis build status: https://travis-ci.org/teracy-official/django-html5-boilerplate
+
+.. |jenkins build status| image:: https://ci.teracy.org/buildStatus/icon?job=django-html5-boilerplate-develop
+.. _jenkins build status: https://ci.teracy.org/job/django-html5-boilerplate-develop/
+
+.. _html5-boilerplate: http://html5boilerplate.com
