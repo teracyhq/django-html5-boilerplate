@@ -9,9 +9,9 @@ test:
 	coverage run --branch --source=teracy `which django-admin.py` test \
 		--settings=teracy.html5boilerplate.test_settings teracy.html5boilerplate
 
-coverage-report:
-	coverage report --omit=teracy/html5boilerplate/test*
+report-coverage:
+	coverage report --omit=*/__init__.py,teracy/html5boilerplate/test*
 
 .DEFAULT_GOAL := resolve
 
-.PHONY: resolve, check-style, test, coverage-report
+.PHONY: resolve, check-style, test, report-coverage
