@@ -30,7 +30,7 @@ setup(
     license='BSD License',
     description='html5-boilerplate Django wrapper application',
     long_description=README,
-    url='http://djhbp.teracy.org',
+    url='https://github.com/teracy-official/django-html5-boilerplate',
     author='hoatle',
     author_email='hoatlevan@gmail.com',
     maintainer='hoatle',
