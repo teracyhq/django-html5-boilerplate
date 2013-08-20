@@ -3,7 +3,9 @@ teracy-django-html5-boilerplate
 
 ``teracy-django-html5-boilerplate`` is a Django wrapper application that includes `html5-boilerplate`_
 assets and provides ``base.html`` for starting any web application with ``html5-boilerplate``.
-This ``base.html`` is flexible enough that you could override almost any block within it.
+
+The project mission is to port html5-boilerplate to Django development so that every Django project
+could take and use it with ease, flexibility and customization by its needs.
 
 Continuous Integration
 ----------------------
