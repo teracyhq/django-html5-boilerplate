@@ -22,7 +22,7 @@ README = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
-    name='django-html5-boilerplate',
+    name='teracy-django-html5-boilerplate',
     version=find_version('teracy', 'html5boilerplate', '__init__.py'),
     packages=find_packages(),
     namespace_packages=['teracy'],
@@ -33,10 +33,18 @@ setup(
     url='http://djhbp.teracy.org',
     author='hoatle',
     author_email='hoatlevan@gmail.com',
+    maintainer='hoatle',
+    maintainer_email='hoatlevan@gmail.com',
+    keywords=['python', 'django', 'html5-boilerplate'],
+    install_requires=[
+        'django>=1.5'
+    ],
     classifiers=[
+        'Development Status :: 2 - Pre-Alpha',
         'Environment :: Web Environment',
         'Framework :: Django',
         'Intended Audience :: Developers',
+        'License :: OSI Approved',
         'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
@@ -45,9 +53,6 @@ setup(
         'Programming Language :: Python :: 3.2',
         'Programming Language :: Python :: 3.3',
         'Topic :: Internet :: WWW/HTTP',
-        'Topic :: Internet :: WWW/HTTP :: html5-boilerplate',
-    ],
-    requires=[
-        'Django'
+        'Topic :: Internet :: WWW/HTTP :: Browsers',
     ]
 )
