@@ -46,5 +46,8 @@ setup(
         'Programming Language :: Python :: 3.3',
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: html5-boilerplate',
+    ],
+    requires=[
+        'Django'
     ]
 )

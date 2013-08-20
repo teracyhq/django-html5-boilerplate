@@ -16,10 +16,23 @@ Continuous Integration
 Installation
 ------------
 
-1. Add ``django-html5-boilerplate`` application into your requirements file:
+Add ``django-html5-boilerplate`` application into your requirements file:
 ::
-    git+git://github.com/teracy-official/django-html5-boilerplate.git@develop#egg=django-html5-boilerplate
+    django-html5-boilerplate
 
+Or with ``pip``:
+::
+    $ pip install django-html5-boilerplate
+
+Or with ``setuptools``:
+
+Download the source code at https://github.com/teracy-official/django-html5-boilerplate and:
+::
+    $ python setup.py install
+
+
+Usage
+-----
 
 1. Add "teracy.html5boilerplate" to your ``INSTALLED_APPS`` setting like this:
 ::
@@ -49,6 +62,7 @@ Context variables are expected to be included in a dictionary variable named: "p
     page.title           - value for <title> tag. Default: None.
     page.ga_id           - id for google analytics. Default: None.
 
+
 Context Processors
 ------------------
 
@@ -56,6 +70,10 @@ Context Processors
 ``page.author``, ``page.copyright`` and ``page.ga_id`` from django settings file like the
 configuration below:
 ::
+    TEMPLATE_CONTEXT_PROCESSORS += (
+        'teracy.html5boilerplate.context_processors.page',
+    )
+
     SITE_AUTHOR = 'Teracy'
     SITE_COPYRIGHT = 'Teracy, Inc'
     SITE_GA_ID = 'UA-42868657-2'
@@ -123,23 +141,27 @@ twitter cards, apple app id, etc.).
 Contributing
 ------------
 
-1. Make sure to resolve the dependency requirements:
+1. File issues at https://issues.teracy.org/browse/DJHBL
+
+2. Follow workflow at http://dev.teracy.org/docs/develop/workflow.html
+
+3. Notices:
+
+Make sure to resolve the dependency requirements:
 ::
     $ make resolve
 
-2. Make sure to check the coding style:
+Make sure to check the coding style:
 ::
     $ make check-style
 
-3. Make sure to run tests:
+Make sure to run tests:
 ::
     $ make test
 
-4. Make sure to check the coverage report:
+Make sure to check the coverage report:
 ::
     $ make report-coverage
-
-5. File issues at https://issues.teracy.org/browse/DJHBP
 
 
 Authors and contributors
