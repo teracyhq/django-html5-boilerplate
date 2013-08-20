@@ -1,7 +1,7 @@
-django-html5-boilerplate
-========================
+teracy-django-html5-boilerplate
+===============================
 
-``django-html5-boilerplate`` is a Django wrapper application that includes `html5-boilerplate`_
+``teracy-django-html5-boilerplate`` is a Django wrapper application that includes `html5-boilerplate`_
 assets and provides ``base.html`` for starting any web application with ``html5-boilerplate``.
 This ``base.html`` is flexible enough that you could override almost any block within it.
 
@@ -16,13 +16,13 @@ Continuous Integration
 Installation
 ------------
 
-Add ``django-html5-boilerplate`` application into your requirements file:
+Add ``teracy-django-html5-boilerplate`` application into your requirements file:
 ::
-    django-html5-boilerplate
+    teracy-django-html5-boilerplate
 
 Or with ``pip``:
 ::
-    $ pip install django-html5-boilerplate
+    $ pip install teracy-django-html5-boilerplate
 
 Or with ``setuptools``:
 
