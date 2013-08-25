@@ -143,7 +143,7 @@ twitter cards, apple app id, etc.).
 Contributing
 ------------
 
-1. File issues at https://issues.teracy.org/browse/DJHBL
+1. File issues at https://issues.teracy.org/browse/DJHBP
 
 2. Follow workflow at http://dev.teracy.org/docs/develop/workflow.html
 
