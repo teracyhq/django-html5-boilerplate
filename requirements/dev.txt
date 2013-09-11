@@ -1,5 +1,5 @@
 # dependency requirements for testing
-Django==1.5.1
+Django==1.5.2
 flake8
 coverage
 django-discover-runner==1.0

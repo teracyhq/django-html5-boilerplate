@@ -15,6 +15,22 @@ Continuous Integration
 |jenkins build status|_
 
 
+
+Usage
+-----
+
+1. Add "teracy.html5boilerplate" to your ``INSTALLED_APPS`` setting like this:
+::
+
+    INSTALLED_APPS += (
+        'teracy.html5boilerplate',
+    )
+
+2. Extend the ``base.html`` like this:
+::
+    {% extends 'html5boilerplate/base.html' %}
+
+
 Installation
 ------------
 
@@ -33,19 +49,28 @@ Download the source code at https://github.com/teracy-official/django-html5-boil
     $ python setup.py install
 
 
-Usage
------
+Configuration
+-------------
 
-1. Add "teracy.html5boilerplate" to your ``INSTALLED_APPS`` setting like this:
+``teracy.html5boilerplate.context_processors.page`` context processor is provided to process
+``page.author``, ``page.copyright`` and ``page.ga_id`` from django settings file like the
+configuration below:
 ::
-
-    INSTALLED_APPS += (
-        'teracy.html5boilerplate',
+    TEMPLATE_CONTEXT_PROCESSORS += (
+        'teracy.html5boilerplate.context_processors.page',
     )
 
-2. Extend the ``base.html`` like this:
+    SITE_AUTHOR = 'Teracy'
+    SITE_COPYRIGHT = 'Teracy, Inc'
+    SITE_GA_ID = 'UA-42868657-2'
+
+To include source code files instead of minified ones, add ``django.core.context_processors.debug``
+to ``TEMPLATE_CONTEXT_PROCESSORS`` on **debug mode**.
 ::
-    {% extends 'html5boilerplate/base.html' %}
+    TEMPLATE_CONTEXT_PROCESSORS += (
+        'django.core.context_processors.debug',
+    )
+
 
 
 Context Variables
@@ -63,22 +88,6 @@ Context variables are expected to be included in a dictionary variable named: "p
     page.copyright       - "content" for "copyright" name meta tag. Default: None.
     page.title           - value for <title> tag. Default: None.
     page.ga_id           - id for google analytics. Default: None.
-
-
-Context Processors
-------------------
-
-``teracy.html5boilerplate.context_processors.page`` context processor is provided to process
-``page.author``, ``page.copyright`` and ``page.ga_id`` from django settings file like the
-configuration below:
-::
-    TEMPLATE_CONTEXT_PROCESSORS += (
-        'teracy.html5boilerplate.context_processors.page',
-    )
-
-    SITE_AUTHOR = 'Teracy'
-    SITE_COPYRIGHT = 'Teracy, Inc'
-    SITE_GA_ID = 'UA-42868657-2'
 
 
 Blocks
@@ -177,7 +186,7 @@ License
 
 BSD License
 ::
-    Copyright (c) Teracy, Inc and individual contributors.
+    Copyright (c) Teracy, Inc. and individual contributors.
     All rights reserved.
 
     Redistribution and use in source and binary forms, with or without modification,
@@ -190,7 +199,7 @@ BSD License
            notice, this list of conditions and the following disclaimer in the
            documentation and/or other materials provided with the distribution.
 
-        3. Neither the name of Teracy nor the names of its contributors may be used
+        3. Neither the name of Teracy, Inc. nor the names of its contributors may be used
            to endorse or promote products derived from this software without
            specific prior written permission.
 

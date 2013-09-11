@@ -36,7 +36,11 @@
 {% endblock %}
 
 {% block javascript %}
+    {% if debug %}
+    <script src="{% static 'html5boilerplate/js/vendor/modernizr-2.6.2.js' %}"></script>
+    {% else %}
     <script src="{% static 'html5boilerplate/js/vendor/modernizr-2.6.2.min.js' %}"></script>
+    {% endif %}
 {% endblock %}
 
 </head>
@@ -54,8 +58,13 @@
 
 {% block body_extra %}
     {% block jquery_loader %}
+    {% if debug %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script>window.jQuery || document.write('<script src="{% static 'html5boilerplate/js/vendor/jquery-1.9.1.js' %}"><\/script>')</script>
+    {% else %}
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="{% static 'html5boilerplate/js/vendor/jquery-1.9.1.min.js' %}"><\/script>')</script>
+    {% endif %}
     <script src="{% static 'html5boilerplate/js/plugins.js' %}"></script>
     {% endblock %}
 

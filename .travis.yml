@@ -8,7 +8,7 @@ before_install:
   - export DJANGO_SETTINGS_MODULE=teracy.html5boilerplate.test_settings
 install:
   - pip install -e .
-  - pip install -r requirements/test.txt
+  - pip install -r requirements/dev.txt
 before_script:
   - flake8 teracy
 script:
