@@ -6,9 +6,9 @@
 <head>
 {% block meta %}
     <meta charset="{{ page.charset|default:'utf-8'}}" />
-    <meta http-equiv="X-UA-Compatible" content="{{ page.x_ua_compatible|default:'IE=edge,chrome=1' }}" />
+    <meta http-equiv="X-UA-Compatible" content="{{ page.x_ua_compatible|default:'IE=edge' }}" />
     <meta name="description" content="{{ page.description }}" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="keywords" content="{{ page.keywords }}" />
     <meta name="author" content="{{ page.author }}" />
     <meta name="copyright" content="{{ page.copyright }}" />
@@ -48,7 +48,8 @@
 {% block browser_outdated %}
     {% comment %} TODO translate the text below {% endcomment %}
     <!--[if lt IE 7]>
-    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please
+        <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 {% endblock %}
 
@@ -59,23 +60,26 @@
 {% block body_extra %}
     {% block jquery_loader %}
     {% if debug %}
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-    <script>window.jQuery || document.write('<script src="{% static 'html5boilerplate/js/vendor/jquery-1.9.1.js' %}"><\/script>')</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js"></script>
+    <script>window.jQuery || document.write('<script src="{% static 'html5boilerplate/js/vendor/jquery-1.10.2.js' %}"><\/script>')</script>
     {% else %}
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="{% static 'html5boilerplate/js/vendor/jquery-1.9.1.min.js' %}"><\/script>')</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{% static 'html5boilerplate/js/vendor/jquery-1.10.2.min.js' %}"><\/script>')</script>
     {% endif %}
     <script src="{% static 'html5boilerplate/js/plugins.js' %}"></script>
+    <script src="{% static 'html5boilerplate/js/main.js' %}"></script>
     {% endblock %}
 
     {% block google_analytics %}
     {% comment %}Google Analytics: change UA-XXXXX-X to be your site's ID with page.ga_id{% endcomment %}
     {% if page.ga_id %}
     <script>
-        var _gaq=[['_setAccount','{{ page.ga_id }}'],['_trackPageview']];
-        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src='//www.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
+        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+        ga('create','{{ page.ga_id }}');ga('send','pageview');
     </script>
     {% endif %}
 
