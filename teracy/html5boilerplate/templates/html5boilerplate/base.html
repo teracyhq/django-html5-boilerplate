@@ -20,15 +20,20 @@
     <title>{{ page.title }}</title>
 {% endblock %}
 
+{% load staticfiles %}
+
 {% comment %}
     Place favicon.ico and apple-touch-icon.png in the root directory
     Or explicit set these on apple_touch_icon and favicon blocks.
 {% endcomment %}
-{% block apple_touch_icon %}{% endblock %}
+{% block apple_touch_icon %}
+    <link rel="apple-touch-icon-precomposed" href="{% static 'html5boilerplate/apple-touch-icon-precomposed.png' %}" />
+{% endblock %}
 
-{% block favicon %}{% endblock %}
+{% block favicon %}
+    <link rel="icon" href="{% static 'html5boilerplate/favicon.ico' %}" />
+{% endblock %}
 
-{% load staticfiles %}
 
 {% block stylesheet %}
     <link rel="stylesheet" href="{% static 'html5boilerplate/css/normalize.css' %}" />
