@@ -12,7 +12,7 @@ resolve:
 	pip install -e .
 
 check-style:
-	flake8 .
+	flake8 --max-complexity 12 .
 
 test:
 	coverage run --branch --source=teracy `which django-admin.py` test \
