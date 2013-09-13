@@ -8,9 +8,8 @@ before_install:
   - export DJANGO_SETTINGS_MODULE=teracy.html5boilerplate.test_settings
 install:
   - pip install -r requirements/dev.txt
-before_script:
-  - flake8 teracy
-  - pylint --rcfile .pylintrc *.py teracy || exit 0
 script:
+  - flake8 --max-complexity 12 .
   - coverage run --branch --source=teracy `which nosetests` -v
   - coverage report --omit=*/__init__.py,teracy/html5boilerplate/test*
+  - pylint --rcfile .pylintrc *.py teracy || exit 0
