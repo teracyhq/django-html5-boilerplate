@@ -1,3 +1,6 @@
+"""
+tests for teracy.html5boilerplate.context_processors
+"""
 from __future__ import absolute_import
 from django.conf import settings
 from django.test import SimpleTestCase
@@ -6,6 +9,9 @@ from teracy.html5boilerplate.context_processors import page
 
 
 class ContextProcessorsTest(SimpleTestCase):
+    """
+    Test class for teracy.html5boilerplate.context_processors
+    """
     def setUp(self):
         self.factory = RequestFactory()
 

@@ -1,3 +1,6 @@
+"""
+test_settings module for DJANGO_SETTINGS_MODULE
+"""
 import django
 
 SITE_ID = 1
