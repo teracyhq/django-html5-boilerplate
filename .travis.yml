@@ -13,5 +13,4 @@ before_script:
   - flake8 teracy
 script:
   - coverage run --branch --source=teracy `which django-admin.py` test teracy.html5boilerplate
-  - coverage report --omit=teracy/html5boilerplate/test*
-
+  - coverage report --omit=*/__init__.py,teracy/html5boilerplate/test*

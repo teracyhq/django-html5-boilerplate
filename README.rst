@@ -170,6 +170,10 @@ Make sure to run tests:
 ::
     $ make test
 
+You can pass options to ``$ make test``, for example:
+::
+    $ make test teracy.html5boilerplate.tests.tests.ContextProcessorsTest.test_module_api
+
 Make sure to check the coverage report:
 ::
     $ make report-coverage
