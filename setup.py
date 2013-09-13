@@ -1,18 +1,28 @@
+"""
+setup.py for teracy-django-html5-boilerplate
+"""
+
 import os
 import re
 from setuptools import setup, find_packages
 
 
 def get_file(*parts):
+    """
+    Gets a file and open it
+    """
     filename = os.path.join(os.path.dirname(__file__), *parts)
     return open(filename)
 
 
 def find_version(*file_paths):
-    f = get_file(*file_paths)
-    for line in f:
+    """
+    Finds version from the provided file_paths
+    """
+    got_file = get_file(*file_paths)
+    for line in got_file:
         if re.match('__version__ = .+', line):
-            return re.search('\d.+\d', line).group(0)
+            return re.search(r'\d.+\d', line).group(0)
     raise RuntimeError('Unable to find string version')
 
 
