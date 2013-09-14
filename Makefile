@@ -1,13 +1,13 @@
 resolve:
-	pip install -r requirements/test.txt
-	pip install -e .
+	pip install -r requirements/dev.txt
 
 check-style:
-	flake8 .
+	flake8 --max-complexity 12 .
+	pylint --rcfile .pylintrc *.py teracy
 
 test:
-	coverage run --branch --source=teracy `which django-admin.py` test \
-		--settings=teracy.html5boilerplate.test_settings teracy.html5boilerplate
+	export DJANGO_SETTINGS_MODULE=teracy.html5boilerplate.test_settings && \
+	coverage run --branch --source=teracy `which nosetests` -v
 
 report-coverage:
 	coverage report --omit=*/__init__.py,teracy/html5boilerplate/test*

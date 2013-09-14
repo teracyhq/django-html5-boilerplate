@@ -3,7 +3,9 @@ teracy-django-html5-boilerplate
 
 ``teracy-django-html5-boilerplate`` is a Django wrapper application that includes `html5-boilerplate`_
 assets and provides ``base.html`` for starting any web application with ``html5-boilerplate``.
-This ``base.html`` is flexible enough that you could override almost any block within it.
+
+The project mission is to port html5-boilerplate to Django development so that every Django project
+could take and use it with ease, flexibility and customization by its needs.
 
 Continuous Integration
 ----------------------
@@ -11,6 +13,32 @@ Continuous Integration
 |travis build status|_
 
 |jenkins build status|_
+
+
+
+Usage
+-----
+
+1. Add "teracy.html5boilerplate" to your ``INSTALLED_APPS`` setting like this:
+::
+
+    INSTALLED_APPS += (
+        'teracy.html5boilerplate',
+    )
+
+2. Extend the ``base.html`` like this:
+::
+    {% extends 'html5boilerplate/base.html' %}
+
+3. Overriding
+
+Assume that `django-boilerplate`_ is used.
+
+- Overriding ``static`` by creating ``static/html5boilerplate/`` containing ``favicon.ico`` and
+  ``apple-touch-icon-precomposed.png``.
+
+- Overriding ``templates`` overriding by creating ``templates/html5boilerplate/`` containing
+  ``crosssdomain.xml``, ``humans.txt`` and ``robots.txt``.
 
 
 Installation
@@ -30,20 +58,33 @@ Download the source code at https://github.com/teracy-official/django-html5-boil
 ::
     $ python setup.py install
 
-
-Usage
------
-
-1. Add "teracy.html5boilerplate" to your ``INSTALLED_APPS`` setting like this:
+To download the latest snapshot development version with ``pip``:
 ::
+    pip install -i http://pypi.teracy.org/teracy/public/+simple/ teracy-django-html5-boilerplate --pre
 
-    INSTALLED_APPS += (
-        'teracy.html5boilerplate',
+
+Configuration
+-------------
+
+``teracy.html5boilerplate.context_processors.page`` context processor is provided to process
+``page.author``, ``page.copyright`` and ``page.ga_id`` from django settings file like the
+configuration below:
+::
+    TEMPLATE_CONTEXT_PROCESSORS += (
+        'teracy.html5boilerplate.context_processors.page',
     )
 
-2. Extend the ``base.html`` like this:
+    SITE_AUTHOR = 'Teracy'
+    SITE_COPYRIGHT = 'Teracy, Inc'
+    SITE_GA_ID = 'UA-42868657-2'
+
+To include source code files instead of minified ones, add ``django.core.context_processors.debug``
+to ``TEMPLATE_CONTEXT_PROCESSORS`` on **debug mode**.
 ::
-    {% extends 'html5boilerplate/base.html' %}
+    TEMPLATE_CONTEXT_PROCESSORS += (
+        'django.core.context_processors.debug',
+    )
+
 
 
 Context Variables
@@ -61,22 +102,6 @@ Context variables are expected to be included in a dictionary variable named: "p
     page.copyright       - "content" for "copyright" name meta tag. Default: None.
     page.title           - value for <title> tag. Default: None.
     page.ga_id           - id for google analytics. Default: None.
-
-
-Context Processors
-------------------
-
-``teracy.html5boilerplate.context_processors.page`` context processor is provided to process
-``page.author``, ``page.copyright`` and ``page.ga_id`` from django settings file like the
-configuration below:
-::
-    TEMPLATE_CONTEXT_PROCESSORS += (
-        'teracy.html5boilerplate.context_processors.page',
-    )
-
-    SITE_AUTHOR = 'Teracy'
-    SITE_COPYRIGHT = 'Teracy, Inc'
-    SITE_GA_ID = 'UA-42868657-2'
 
 
 Blocks
@@ -141,7 +166,7 @@ twitter cards, apple app id, etc.).
 Contributing
 ------------
 
-1. File issues at https://issues.teracy.org/browse/DJHBL
+1. File issues at https://issues.teracy.org/browse/DJHBP
 
 2. Follow workflow at http://dev.teracy.org/docs/develop/workflow.html
 
@@ -175,7 +200,7 @@ License
 
 BSD License
 ::
-    Copyright (c) Teracy, Inc and individual contributors.
+    Copyright (c) Teracy, Inc. and individual contributors.
     All rights reserved.
 
     Redistribution and use in source and binary forms, with or without modification,
@@ -188,7 +213,7 @@ BSD License
            notice, this list of conditions and the following disclaimer in the
            documentation and/or other materials provided with the distribution.
 
-        3. Neither the name of Teracy nor the names of its contributors may be used
+        3. Neither the name of Teracy, Inc. nor the names of its contributors may be used
            to endorse or promote products derived from this software without
            specific prior written permission.
 
@@ -210,3 +235,5 @@ BSD License
 .. _jenkins build status: https://ci.teracy.org/job/django-html5-boilerplate-develop/
 
 .. _html5-boilerplate: http://html5boilerplate.com
+
+.. _django-boilerplate: https://github.com/teracy-official/django-boilerplate
