@@ -16,9 +16,12 @@ class ContextProcessorsTest(SimpleTestCase):
         self.factory = RequestFactory()
 
     def tearDown(self):
-        settings.SITE_AUTHOR = None
-        settings.SITE_COPYRIGHT = None
-        settings.SITE_GA_ID = None
+        if hasattr(settings, 'SITE_AUTHOR'):
+            del settings.SITE_AUTHOR
+        if hasattr(settings, 'SITE_COPYRIGHT'):
+            del settings.SITE_COPYRIGHT
+        if hasattr(settings, 'SITE_GA_ID'):
+            del settings.SITE_GA_ID
 
     def test_module_api(self):
         """
