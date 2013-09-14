@@ -30,6 +30,16 @@ Usage
 ::
     {% extends 'html5boilerplate/base.html' %}
 
+3. Overriding
+
+Assume that `django-boilerplate`_ is used.
+
+- Overriding ``static`` by creating ``static/html5boilerplate/`` containing ``favicon.ico`` and
+  ``apple-touch-icon-precomposed.png``.
+
+- Overriding ``templates`` overriding by creating ``templates/html5boilerplate/`` containing
+  ``crosssdomain.xml``, ``humans.txt`` and ``robots.txt``.
+
 
 Installation
 ------------
@@ -47,6 +57,10 @@ Or with ``setuptools``:
 Download the source code at https://github.com/teracy-official/django-html5-boilerplate and:
 ::
     $ python setup.py install
+
+To download the latest snapshot development version with ``pip``:
+::
+    pip install -i http://pypi.teracy.org/teracy/public/+simple/ teracy-django-html5-boilerplate --pre
 
 
 Configuration
@@ -221,3 +235,5 @@ BSD License
 .. _jenkins build status: https://ci.teracy.org/job/django-html5-boilerplate-develop/
 
 .. _html5-boilerplate: http://html5boilerplate.com
+
+.. _django-boilerplate: https://github.com/teracy-official/django-boilerplate
