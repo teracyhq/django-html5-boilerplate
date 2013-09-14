@@ -6,8 +6,8 @@ check-style:
 	pylint --rcfile .pylintrc *.py teracy
 
 test:
-	export DJANGO_SETTINGS_MODULE=teracy.html5boilerplate.test_settings
-	coverage run --branch --source=teracy `which nosetests`
+	export DJANGO_SETTINGS_MODULE=teracy.html5boilerplate.test_settings && \
+	coverage run --branch --source=teracy `which nosetests` -v
 
 report-coverage:
 	coverage report --omit=*/__init__.py,teracy/html5boilerplate/test*

@@ -17,13 +17,13 @@ def page(request):
 
     page_context = {}
 
-    if settings.SITE_AUTHOR is not None:
+    if hasattr(settings, 'SITE_AUTHOR') and settings.SITE_AUTHOR is not None:
         page_context['author'] = settings.SITE_AUTHOR
 
-    if settings.SITE_COPYRIGHT is not None:
+    if hasattr(settings, 'SITE_COPYRIGHT') and settings.SITE_COPYRIGHT is not None:
         page_context['copyright'] = settings.SITE_COPYRIGHT
 
-    if settings.SITE_GA_ID is not None:
+    if hasattr(settings, 'SITE_GA_ID') and settings.SITE_GA_ID is not None:
         page_context['ga_id'] = settings.SITE_GA_ID
 
     context_extras['page'] = page_context
