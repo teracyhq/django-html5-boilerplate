@@ -4,6 +4,9 @@ Change Log
 [0.2.0][]
 ---------
 
+- Bug
+    + [DJHBP-19] - error when there is no site settings for author, copyright, ga_id
+
 - Improvement
     + [DJHBP-11] - Include source code instead of minified on DEBUG mode
 
