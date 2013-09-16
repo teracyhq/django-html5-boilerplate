@@ -138,19 +138,22 @@ By default:
 * [meta]: includes basic meta data of a page.
 
 * [meta_extra]: should be used to provide more meta data for the page (for example: open graph,
-twitter cards, apple app id, etc.).
+  twitter cards, apple app id, etc.).
 
 * [title]: should provide page.title context to set the page's title.
 
-* [apple_touch_icon]: Place apple-touch-icon.png in the root directory or set it explict here on this block.
+* [apple_touch_icon]: Place apple-touch-icon.png in the root directory or set it explict here on
+  this block. Default link to ``html5boilerplate/apple-touch-icon-precomposed.png``.
 
 * [favicon]: Place favicon.ico in the root directory or set it explicit here on this block.
+  Default link to ``html5boilerplate/favicon.ico``.
 
-* [stylesheet]: Load 'html5boilerplate/css/normalize.css' and 'html5boilerplate/css/main.css' by default.
+* [stylesheet]: Load 'html5boilerplate/css/normalize.css' and 'html5boilerplate/css/main.css' by
+  default.
 
 * [javascript]: Load 'html5boilerplate/js/vendor/modernizr-2.6.2.min.js' by default.
 
-* [body_class]: Set class to <body> tag.
+* [body_class]: Set CSS class to <body> tag.
 
 * [browser_outdated]: Outdated message to be displayed when IE6 and below are used to access the page.
 
