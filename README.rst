@@ -10,10 +10,23 @@ could take and use it with ease, flexibility and customization by its needs.
 Continuous Integration
 ----------------------
 
-|travis build status|_
+.. image:: https://badge.fury.io/py/teracy-django-html5-boilerplate.png
+  :target: https://badge.fury.io/py/teracy-django-html5-boilerplate
 
-|jenkins build status|_
+.. image:: https://pypip.in/d/teracy-django-html5-boilerplate/badge.png
+   :target: https://crate.io/packages/teracy-django-html5-boilerplate?version=latest
 
+.. image:: https://coveralls.io/repos/teracy-official/django-html5-boilerplate/badge.png?branch=develop
+  :alt: Coverage Status
+  :target: https://coveralls.io/r/teracy-official/django-html5-boilerplate?branch=develop
+
+.. image:: https://travis-ci.org/teracy-official/django-html5-boilerplate.png?branch=develop
+  :alt: Travis CI
+  :target: https://travis-ci.org/teracy-official/django-html5-boilerplate
+
+.. image:: https://ci.teracy.org/buildStatus/icon?job=django-html5-boilerplate-develop
+  :alt: Teracy CI
+  :target: https://ci.teracy.org/job/django-html5-boilerplate-develop/
 
 
 Usage
@@ -231,11 +244,6 @@ BSD License
     (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-.. |travis build status| image:: https://travis-ci.org/teracy-official/django-html5-boilerplate.png?branch=develop
-.. _travis build status: https://travis-ci.org/teracy-official/django-html5-boilerplate
-
-.. |jenkins build status| image:: https://ci.teracy.org/buildStatus/icon?job=django-html5-boilerplate-develop
-.. _jenkins build status: https://ci.teracy.org/job/django-html5-boilerplate-develop/
 
 .. _html5-boilerplate: http://html5boilerplate.com
 
