@@ -9,7 +9,11 @@ before_install:
 install:
   - pip install -r requirements/dev.txt
 script:
-  - flake8 --max-complexity 12 .
   - coverage run --branch --source=teracy `which nosetests` -v
+
+after_success:
+  - flake8 --max-complexity 12 .
   - coverage report --omit=*/__init__.py,teracy/html5boilerplate/test*
+  - pip install --quiet python-coveralls
+  - coveralls
   - pylint --rcfile .pylintrc *.py teracy || exit 0
