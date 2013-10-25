@@ -6,9 +6,6 @@ coverage==3.6
 pylint==1.0.0
 
 # test
-#Django==1.5.4
-#change to lowercase to avoid devpi bug
-# https://bitbucket.org/hpk42/devpi/issue/53/uploaded-package-vs-inheritance
-django==1.5.4
+Django==1.5.4
 django-discover-runner==1.0
 nose==1.3.0
