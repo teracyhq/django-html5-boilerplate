@@ -8,7 +8,9 @@
   <meta charset="{{ page.charset|default:'utf-8'}}" />
   <meta http-equiv="X-UA-Compatible" content="{{ page.x_ua_compatible|default:'IE=edge' }}" />
   <meta name="description" content="{{ page.description }}" />
+  {% block meta_viewport %}
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  {% endblock %}
   <meta name="keywords" content="{{ page.keywords }}" />
   <meta name="author" content="{{ page.author }}" />
   <meta name="copyright" content="{{ page.copyright }}" />
