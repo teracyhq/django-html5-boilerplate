@@ -144,6 +144,7 @@ The page structure is defined as following:
   <html>
     <head>
       [meta]
+        [meta_viewport]
       [meta_extra]
       [title]
       [apple_touch_icon]
@@ -156,6 +157,7 @@ The page structure is defined as following:
       [body_content]
       [body_extra]
         [jquery_loader]
+        [js_app_loader]
         [google_analytics]
     </body>
   </html>
