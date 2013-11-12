@@ -32,18 +32,23 @@ Continuous Integration
 Usage
 -----
 
-1. Add "teracy.html5boilerplate" to your ``INSTALLED_APPS`` setting like this:
+**1. Application Adding**
+
+Add "teracy.html5boilerplate" to your ``INSTALLED_APPS`` setting like this:
 ::
 
-    INSTALLED_APPS += (
-        'teracy.html5boilerplate',
-    )
+  INSTALLED_APPS += (
+      'teracy.html5boilerplate',
+  )
 
-2. Extend the ``base.html`` like this:
+**2. base.html Extending**
+
+Extend the ``base.html`` like this:
 ::
-    {% extends 'html5boilerplate/base.html' %}
 
-3. Overriding
+  {% extends 'html5boilerplate/base.html' %}
+
+**3. Overriding**
 
 Assume that `django-boilerplate`_ is used.
 
@@ -59,21 +64,25 @@ Installation
 
 Add ``teracy-django-html5-boilerplate`` application into your requirements file:
 ::
-    teracy-django-html5-boilerplate
+
+  teracy-django-html5-boilerplate
 
 Or with ``pip``:
 ::
-    $ pip install teracy-django-html5-boilerplate
+
+  $ pip install teracy-django-html5-boilerplate
 
 Or with ``setuptools``:
 
 Download the source code at https://github.com/teracy-official/django-html5-boilerplate and:
 ::
-    $ python setup.py install
+
+  $ python setup.py install
 
 To download the latest snapshot development version with ``pip``:
 ::
-    pip install -i http://pypi.teracy.org/teracy/public/+simple/ teracy-django-html5-boilerplate --pre
+
+  pip install -i http://pypi.teracy.org/teracy/public/+simple/ teracy-django-html5-boilerplate --pre
 
 
 Configuration
@@ -83,20 +92,22 @@ Configuration
 ``page.author``, ``page.copyright`` and ``page.ga_id`` from django settings file like the
 configuration below:
 ::
-    TEMPLATE_CONTEXT_PROCESSORS += (
-        'teracy.html5boilerplate.context_processors.page',
-    )
 
-    SITE_AUTHOR = 'Teracy'
-    SITE_COPYRIGHT = 'Teracy, Inc'
-    SITE_GA_ID = 'UA-42868657-2'
+  TEMPLATE_CONTEXT_PROCESSORS += (
+      'teracy.html5boilerplate.context_processors.page',
+  )
+
+  SITE_AUTHOR = 'Teracy'
+  SITE_COPYRIGHT = 'Teracy, Inc.'
+  SITE_GA_ID = 'UA-42868657-2'
 
 To include source code files instead of minified ones, add ``django.core.context_processors.debug``
 to ``TEMPLATE_CONTEXT_PROCESSORS`` on **debug mode**.
 ::
-    TEMPLATE_CONTEXT_PROCESSORS += (
-        'django.core.context_processors.debug',
-    )
+
+  TEMPLATE_CONTEXT_PROCESSORS += (
+      'django.core.context_processors.debug',
+  )
 
 
 
@@ -105,16 +116,17 @@ Context Variables
 
 Context variables are expected to be included in a dictionary variable named: "page".
 ::
-    page.lang            - "lang" attribute for <html> tag. Default: "en".
-    page.dir             - "dir" attribute for <html> tag. Default: "ltr".
-    page.charset         - meta charset value. Default: "utf-8".
-    page.x_ua_compatible - "content" for http-equiv="X-UA-Compatible" meta tag. Default: "IE=edge,chrome=1".
-    page.description     - "content" for "description" name meta tag. Default: None.
-    page.keywords        - "content" for "keywords" name meta tag. Default: None.
-    page.author          - "content" for "author" name meta tag. Default: None.
-    page.copyright       - "content" for "copyright" name meta tag. Default: None.
-    page.title           - value for <title> tag. Default: None.
-    page.ga_id           - id for google analytics. Default: None.
+
+  page.lang            - "lang" attribute for <html> tag. Default: "en".
+  page.dir             - "dir" attribute for <html> tag. Default: "ltr".
+  page.charset         - meta charset value. Default: "utf-8".
+  page.x_ua_compatible - "content" for http-equiv="X-UA-Compatible" meta tag. Default: "IE=edge,chrome=1".
+  page.description     - "content" for "description" name meta tag. Default: None.
+  page.keywords        - "content" for "keywords" name meta tag. Default: None.
+  page.author          - "content" for "author" name meta tag. Default: None.
+  page.copyright       - "content" for "copyright" name meta tag. Default: None.
+  page.title           - value for <title> tag. Default: None.
+  page.ga_id           - id for google analytics. Default: None.
 
 
 Blocks
@@ -122,29 +134,31 @@ Blocks
 
 Conventions:
 ::
-    [block_name]
-        [child_block_name]
+
+  [block_name]
+      [child_block_name]
 
 The page structure is defined as following:
 ::
-    <html>
-        <head>
-            [meta]
-            [meta_extra]
-            [title]
-            [apple_touch_icon]
-            [favicon]
-            [stylesheet]
-            [javascript]
-        </head>
-        <body class=[body_class]>
-            [browser_outdated]
-            [body_content]
-            [body_extra]
-                [jquery_loader]
-                [google_analytics]
-        </body>
-    </html>
+
+  <html>
+    <head>
+      [meta]
+      [meta_extra]
+      [title]
+      [apple_touch_icon]
+      [favicon]
+      [stylesheet]
+      [javascript]
+    </head>
+    <body class=[body_class]>
+      [browser_outdated]
+      [body_content]
+      [body_extra]
+        [jquery_loader]
+        [google_analytics]
+    </body>
+  </html>
 
 By default:
 
@@ -190,59 +204,64 @@ Contributing
 
 Make sure to resolve the dependency requirements:
 ::
-    $ make resolve
+
+  $ make resolve
 
 Make sure to check the coding style:
 ::
-    $ make check-style
+
+  $ make check-style
 
 Make sure to run tests:
 ::
-    $ make test
+
+  $ make test
 
 Make sure to check the coverage report:
 ::
-    $ make report-coverage
+
+  $ make report-coverage
 
 
 Authors and contributors
 ------------------------
 
-- Hoat Le: http://github.com/hoatle
+- Hoat Le: hoatle at teracy dot com
 
 
 License
 -------
 
-BSD License
+The BSD 3-Clause License
 ::
-    Copyright (c) Teracy, Inc. and individual contributors.
-    All rights reserved.
 
-    Redistribution and use in source and binary forms, with or without modification,
-    are permitted provided that the following conditions are met:
+  Copyright (c) Teracy, Inc. and individual contributors.
+  All rights reserved.
 
-        1. Redistributions of source code must retain the above copyright notice,
-           this list of conditions and the following disclaimer.
+  Redistribution and use in source and binary forms, with or without modification,
+  are permitted provided that the following conditions are met:
 
-        2. Redistributions in binary form must reproduce the above copyright
-           notice, this list of conditions and the following disclaimer in the
-           documentation and/or other materials provided with the distribution.
+      1. Redistributions of source code must retain the above copyright notice,
+         this list of conditions and the following disclaimer.
 
-        3. Neither the name of Teracy, Inc. nor the names of its contributors may be used
-           to endorse or promote products derived from this software without
-           specific prior written permission.
+      2. Redistributions in binary form must reproduce the above copyright
+         notice, this list of conditions and the following disclaimer in the
+         documentation and/or other materials provided with the distribution.
 
-    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-    ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-    WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-    DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
-    ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-    (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-    LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
-    ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-    (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+      3. Neither the name of Teracy, Inc. nor the names of its contributors may be used
+         to endorse or promote products derived from this software without
+         specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+  DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+  ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+  ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 .. _html5-boilerplate: http://html5boilerplate.com
