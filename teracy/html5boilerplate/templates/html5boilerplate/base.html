@@ -5,90 +5,96 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="{{ page.lang|default:'en' }}" dir="{{ page.dir|default:'ltr' }}"> <!--<![endif]-->
 <head>
 {% block meta %}
-    <meta charset="{{ page.charset|default:'utf-8'}}" />
-    <meta http-equiv="X-UA-Compatible" content="{{ page.x_ua_compatible|default:'IE=edge' }}" />
-    <meta name="description" content="{{ page.description }}" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="keywords" content="{{ page.keywords }}" />
-    <meta name="author" content="{{ page.author }}" />
-    <meta name="copyright" content="{{ page.copyright }}" />
+  <meta charset="{{ page.charset|default:'utf-8'}}" />
+  <meta http-equiv="X-UA-Compatible" content="{{ page.x_ua_compatible|default:'IE=edge' }}" />
+  <meta name="description" content="{{ page.description }}" />
+  {% block meta_viewport %}
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  {% endblock %}
+  <meta name="keywords" content="{{ page.keywords }}" />
+  <meta name="author" content="{{ page.author }}" />
+  <meta name="copyright" content="{{ page.copyright }}" />
 {% endblock %}
 
 {% block meta_extra %}{% endblock %}
 
 {% block title %}
-    <title>{{ page.title }}</title>
+  <title>{{ page.title }}</title>
 {% endblock %}
 
 {% load staticfiles %}
 
 {% comment %}
-    Place favicon.ico and apple-touch-icon.png in the root directory
-    Or explicit set these on apple_touch_icon and favicon blocks.
+  Place favicon.ico and apple-touch-icon.png in the root directory
+  Or explicit set these on apple_touch_icon and favicon blocks.
 {% endcomment %}
 {% block apple_touch_icon %}
-    <link rel="apple-touch-icon-precomposed" href="{% static 'html5boilerplate/apple-touch-icon-precomposed.png' %}" />
+  <link rel="apple-touch-icon-precomposed" href="{% static 'html5boilerplate/apple-touch-icon-precomposed.png' %}" />
 {% endblock %}
 
 {% block favicon %}
-    <link rel="icon" href="{% static 'html5boilerplate/favicon.ico' %}" />
+  <link rel="icon" href="{% static 'html5boilerplate/favicon.ico' %}" />
 {% endblock %}
 
 
 {% block stylesheet %}
-    <link rel="stylesheet" href="{% static 'html5boilerplate/css/normalize.css' %}" />
-    <link rel="stylesheet" href="{% static 'html5boilerplate/css/main.css' %}" />
+  <link rel="stylesheet" href="{% static 'html5boilerplate/css/normalize.css' %}" />
+  <link rel="stylesheet" href="{% static 'html5boilerplate/css/main.css' %}" />
 {% endblock %}
 
 {% block javascript %}
-    {% if debug %}
-    <script src="{% static 'html5boilerplate/js/vendor/modernizr-2.6.2.js' %}"></script>
-    {% else %}
-    <script src="{% static 'html5boilerplate/js/vendor/modernizr-2.6.2.min.js' %}"></script>
-    {% endif %}
+  {% if debug %}
+  <script src="{% static 'html5boilerplate/js/vendor/modernizr-2.6.2.js' %}"></script>
+  {% else %}
+  <script src="{% static 'html5boilerplate/js/vendor/modernizr-2.6.2.min.js' %}"></script>
+  {% endif %}
 {% endblock %}
 
 </head>
 <body class="{% block body_class %}{% endblock %}">
 {% block browser_outdated %}
-    {% comment %} TODO translate the text below {% endcomment %}
-    <!--[if lt IE 7]>
-        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please
-        <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+  {% comment %} TODO translate the text below {% endcomment %}
+  <!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please
+      <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+    </p>
+  <![endif]-->
 {% endblock %}
 
 {% block body_content %}
-    <!-- Add your site or application content here -->
+  <!-- Add your site or application content here -->
 {% endblock %}
 
 {% block body_extra %}
-    {% block jquery_loader %}
-    {% if debug %}
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js"></script>
-    <script>window.jQuery || document.write('<script src="{% static 'html5boilerplate/js/vendor/jquery-1.10.2.js' %}"><\/script>')</script>
-    {% else %}
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="{% static 'html5boilerplate/js/vendor/jquery-1.10.2.min.js' %}"><\/script>')</script>
-    {% endif %}
-    <script src="{% static 'html5boilerplate/js/plugins.js' %}"></script>
-    <script src="{% static 'html5boilerplate/js/main.js' %}"></script>
-    {% endblock %}
+  {% block jquery_loader %}
+  {% if debug %}
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js"></script>
+  <script>window.jQuery || document.write('<script src="{% static 'html5boilerplate/js/vendor/jquery-1.10.2.js' %}"><\/script>')</script>
+  {% else %}
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="{% static 'html5boilerplate/js/vendor/jquery-1.10.2.min.js' %}"><\/script>')</script>
+  {% endif %}
+  {% endblock %}
 
-    {% block google_analytics %}
-    {% comment %}Google Analytics: change UA-XXXXX-X to be your site's ID with page.ga_id{% endcomment %}
-    {% if page.ga_id %}
-    <script>
-        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-        e.src='//www.google-analytics.com/analytics.js';
-        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-        ga('create','{{ page.ga_id }}');ga('send','pageview');
-    </script>
-    {% endif %}
+  {% block js_app_loader %}
+  <script src="{% static 'html5boilerplate/js/plugins.js' %}"></script>
+  <script src="{% static 'html5boilerplate/js/main.js' %}"></script>
+  {% endblock %}
 
-    {% endblock %}
+  {% block google_analytics %}
+  {% comment %}Google Analytics: change UA-XXXXX-X to be your site's ID with page.ga_id{% endcomment %}
+  {% if page.ga_id %}
+  <script>
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    e.src='//www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','{{ page.ga_id }}');ga('send','pageview');
+  </script>
+  {% endif %}
+
+  {% endblock %}
 {% endblock %}
 </body>
 </html>
