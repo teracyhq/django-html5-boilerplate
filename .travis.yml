@@ -1,26 +1,21 @@
 language: python
 python:
-  - "2.6"
-  - "2.7"
-  - "3.2"
-  - "3.3"
+- '2.6'
+- '2.7'
+- '3.2'
+- '3.3'
 before_install:
-  - export DJANGO_SETTINGS_MODULE=teracy.html5boilerplate.test_settings
+- export DJANGO_SETTINGS_MODULE=teracy.html5boilerplate.test_settings
 install:
-  - pip install -r requirements/dev.txt
+- pip install -r requirements/dev.txt
 script:
-  - coverage run --branch --source=teracy `which nosetests` -v
-
+- coverage run --branch --source=teracy `which nosetests` -v
 after_success:
-  - flake8 --max-complexity 12 .
-  - coverage report --omit=*/__init__.py,teracy/html5boilerplate/test*
-  - pip install --quiet python-coveralls
-  - coveralls
-  - pylint --rcfile .pylintrc *.py teracy || exit 0
+- flake8 --max-complexity 12 .
+- coverage report --omit=*/__init__.py,teracy/html5boilerplate/test*
+- pip install --quiet python-coveralls
+- coveralls
+- pylint --rcfile .pylintrc *.py teracy || exit 0
 notifications:
   slack:
-    rooms:
-    - teracy:$SLA_TOKEN#internal-projects
-env:
-  global:
-    secure: BLxAVvduo0BA5iLmoKDLGjgIW/qjFe2y9miG7c7i9sVfrzDdAKDJZaP5rfLfN9MV21jxr42e+S7xjfth555Qcxz2UleYHu7umAJdx0Fc+hJoEF9T2K5xMOwiotGejYGhdUpwoctm8HCe9d5Jwf+shidDTYFfy3DXJtMMO1rZVD8=
+    secure: MFWjpRrMuE5znxOToQppiZpIXhwso2fz7DraEYdl0rYWM7mzJkkFA9WkCsQtktjng8cilfW0gX2gPYBZbU5F33fTzJxh5zzwmVznyRIP38tIc565tDm/9fHxGrP62w6nlwW/E0glGPnSmLsfbdhVxPMuY/nmxEaZrKT9RfPb9nE=
