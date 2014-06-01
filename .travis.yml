@@ -17,3 +17,10 @@ after_success:
   - pip install --quiet python-coveralls
   - coveralls
   - pylint --rcfile .pylintrc *.py teracy || exit 0
+notifications:
+  slack:
+    rooms:
+    - teracy:$SLA_TOKEN#internal-projects
+env:
+  global:
+    secure: BLxAVvduo0BA5iLmoKDLGjgIW/qjFe2y9miG7c7i9sVfrzDdAKDJZaP5rfLfN9MV21jxr42e+S7xjfth555Qcxz2UleYHu7umAJdx0Fc+hJoEF9T2K5xMOwiotGejYGhdUpwoctm8HCe9d5Jwf+shidDTYFfy3DXJtMMO1rZVD8=
