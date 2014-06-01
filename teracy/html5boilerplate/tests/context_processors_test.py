@@ -69,7 +69,7 @@ class ContextProcessorsTest(SimpleTestCase):
         expected_page_context = {
             'copyright': settings.SITE_COPYRIGHT
         }
-        self.assertEqual(page_context, expected_page_context,
+        self.assertEqual(page_context, {},
                          '%s must be %s' % (page_context, expected_page_context))
 
     def test_site_ga_id(self):
